@@ -1,4 +1,4 @@
 1. docker run -d --name my-nginx -p 80:80 nginx - Run an Nginx server in detached mode on port 80:80 with the name 'my-nginx'
 2. docker run -d --name my-httpd -p 8080:80 httpd - Run httpd(Apache) server in detached mode on port 8080:80 with your custom name.
-3. docker run -d --name db -p 3306:3306 mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes - Run mysql server in detached mode on port 3306:3306 with you custom name and  --env to pass
+3. docker run -d --name db -p 3306:3306  -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql - Run mysql server in detached mode on port 3306:3306 with you custom name and  --env to pass
 MYSQL_RANDOM_ROOT_PASSWORD=yes
