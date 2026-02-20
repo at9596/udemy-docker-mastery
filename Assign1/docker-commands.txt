@@ -2,3 +2,7 @@
 2. docker run -d --name my-httpd -p 8080:80 httpd - Run httpd(Apache) server in detached mode on port 8080:80 with your custom name.
 3. docker run -d --name db -p 3306:3306  -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql - Run mysql server in detached mode on port 3306:3306 with you custom name and  --env to pass
 MYSQL_RANDOM_ROOT_PASSWORD=yes
+
+For stop existing containers: docker container stop db2 my-httpd my-nginx
+For check exited containers: docker ps -a
+For remove the existed containers: docker container rm 68d70c5d7fc4 815d30c73933 1b7500f7e518 cc890524dd6e 7003e4341fca e76fa4c05618 1d668dea1939 7a0a536369ba 80a01f1f14c7 a89a0c58dd33 9d093a314b45
