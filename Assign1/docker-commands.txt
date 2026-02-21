@@ -6,3 +6,21 @@ MYSQL_RANDOM_ROOT_PASSWORD=yes
 For stop existing containers: docker container stop db2 my-httpd my-nginx
 For check exited containers: docker ps -a
 For remove the existed containers: docker container rm 68d70c5d7fc4 815d30c73933 1b7500f7e518 cc890524dd6e 7003e4341fca e76fa4c05618 1d668dea1939 7a0a536369ba 80a01f1f14c7 a89a0c58dd33 9d093a314b45
+
+For checking container configuration:
+ 1. docker run -p 80:80 --name webhost -d nginx
+ 2. docker container port webhost
+ 3. docker container inspect webhost
+ 4. docker container inspect --format {{.NetworkSettings.Networks.bridge.IPAddress}} webhost
+ 5. to check network list: docker network ls
+
+ To Ping a network:
+ 1. docker network create my_app_net
+ 2. docker container run -d --name my_nginx_1 --network my_app_net nginx:alpine
+ 3. docker run -d --name my_nginx_2 --network my_app_net nginx:alpine
+ 4. docker exec -it my_nginx_1 ping my_nginx_2
+
+ To clean ghost conntainers:
+ 5. docker container prune
+
+ 6. docker network  inspect my_app_net
