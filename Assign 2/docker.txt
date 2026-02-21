@@ -1,0 +1,4 @@
+1. docker network create dude
+2. docker container run -d --net dude --net-alias search elasticsearch:2
+3. docker run -d --name web-server --net dude nginx:alpine( you can : docker run or docker container run)
+4. docker run -d --name web-server --net dude nginx:alpine
